@@ -1,0 +1,13 @@
+{
+  "name": "auy1104-api-cliente",
+  "version": "1.0.0",
+  "description": "API de prueba para CI/CD",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Simulando pruebas unitarias: OK\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.19.0"
+  }
+}
