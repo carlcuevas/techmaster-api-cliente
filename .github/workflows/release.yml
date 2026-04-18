@@ -1,0 +1,15 @@
+name: Despliegue de Release (CD)
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  llamar-plantilla:
+    uses: carlcuevas/techmaster-central-devops/.github/workflows/plantilla-docker.yml@main
+    with:
+      publicar_imagen: true
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERNICK }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERCONTRA }}
