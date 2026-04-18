@@ -1,0 +1,17 @@
+name: Validacion Continua (CI)
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+    branches-ignore:
+      - 'main'
+
+jobs:
+  llamar-plantilla:
+    uses: carlcuevas/techmaster-central-devops/.github/workflows/plantilla-docker.yml@main
+    with:
+      publicar_imagen: false
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERNICK }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERCONTRA }}
